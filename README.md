@@ -42,3 +42,42 @@ bitcoin-forecasting/
 ├── README.md
 └── requirements.txt
 ```
+
+
+
+---
+
+## 📊 Sample Forecast Visualization
+
+| 📈 **30-Day Bitcoin Forecast** | ![sample_forecast](assets/sample_forecast.png) |
+|-------------------------------|-----------------------------------------------|
+
+> *Visualizes historical vs predicted prices, with adjustable forecast window.*
+
+---
+
+## 🧠 Feature Engineering Highlights
+
+We create time-series-based predictive features:
+- Price lag windows: `lag_1`, `lag_2`, `lag_3`, `lag_5`, `lag_7`
+- Rolling averages: `ma_7`, `ma_30`
+- Momentum indicators: `momentum_7`, `momentum_30`
+- Volatility: `volatility_7`, `volatility_30`
+- Daily return, high-low percentage, % change over 7 days
+
+---
+
+## 🔍 Machine Learning Models
+
+| Model                  | R²     | MAE (USD) | MSE        |
+|------------------------|--------|-----------|------------|
+| ✅ Ridge Regression     | 0.845  | 1457.80   | 3.54M      |
+| Random Forest          | 0.366  | 3082.84   | 14.5M      |
+| XGBoost                | 0.356  | 3097.67   | 14.7M      |
+
+---
+
+## 🧪 Example Streamlit Dashboard
+
+```bash
+streamlit run 07_streamlit_forecaster.py
